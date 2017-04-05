@@ -70,7 +70,7 @@ app.get('/',function(req,res){
     res.send('Append your url to the end of API endpoint without http://');
 });
 
-app.listen(8080, function() {
+app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 
