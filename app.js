@@ -57,8 +57,6 @@ app.get('/:url',function(req,res,next){
     
 });
 
-
-
 app.get('/:url',function(req,res){
     Url.findOne({longUrl:req.params.url},function(error,data){
         if (error) throw error;
