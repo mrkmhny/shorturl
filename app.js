@@ -6,8 +6,7 @@ var app = express();
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise; //replace depricated mongoose promises
 
-
-//mongoose.connect(process.env.MONGO_URI);
+app.set('port', (process.env.PORT || 5000));
 mongoose.connect('mongodb://user:password@ds149700.mlab.com:49700/shorturl');
 
 var urlSchema = new mongoose.Schema({
@@ -68,7 +67,7 @@ app.get('/:url',function(req,res){
 });
 
 app.get('/',function(req,res){
-    res.send('main page');
+    res.send('Append your url to the end of API endpoint without http://');
 });
 
 app.listen(8080, function() {
